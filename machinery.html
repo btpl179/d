@@ -48,9 +48,11 @@
     <section class="section" role="region" aria-labelledby="machinery-overview">
       <div class="container">
         <div class="grid grid-2">
+          
+          <!-- STOLL -->
           <div class="card slide-in-left">
             <h2 id="machinery-overview">STOLL German Equipment</h2>
-            <video style="width: 100%; height: auto; border-radius: 8px;" controls>
+            <video class="machinery-video" controls>
               <source src="./assets/videos/Stoll CMS 530 HP-ADF Knitting Machine.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -70,9 +72,10 @@
             </div>
           </div>
 
+          <!-- CIXING -->
           <div class="card slide-in-right">
             <h2>CIXING Chinese Equipment</h2>
-            <video style="width: 100%; height: auto; border-radius: 8px;" controls>
+            <video class="machinery-video" controls>
               <source src="./assets/videos/CIXING SF FLAT KNITTING MACHINE.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -104,7 +107,6 @@
           <div class="card fade-in">
             <h4>Knitting Specifications</h4>
             <div class="mt-4">
-              <!-- TODO: Add actual gauge specifications -->
               <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius); margin-bottom: var(--spacing-2);">
                 <strong>Gauge Options:</strong> 3-14 gauge (fine to coarse knitting)
               </div>
@@ -134,16 +136,16 @@
 
           <div class="card fade-in">
             <h4>Maintenance Standards</h4>
-              <h5 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-1);">Technical Specifications:</h5>
-              <p class="text-gray"><em>Flatbed knitting machines with multi-gauge capability, electronic patterning, and automatic tension control. Multi-gauge options for versatile production requirements.</em></p>
-                <strong>Preventive Care:</strong> Regular maintenance schedules
-              </div>
-              <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius); margin-bottom: var(--spacing-2);">
-                <strong>Calibration:</strong> Precision maintained across all equipment
-              </div>
-              <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius);">
-                <strong>Downtime:</strong> Minimized through proactive maintenance
-              </div>
+            <h5 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-1);">Technical Specifications:</h5>
+            <p class="text-gray"><em>Flatbed knitting machines with multi-gauge capability, electronic patterning, and automatic tension control. Multi-gauge options for versatile production requirements.</em></p>
+            <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius); margin-bottom: var(--spacing-2);">
+              <strong>Preventive Care:</strong> Regular maintenance schedules
+            </div>
+            <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius); margin-bottom: var(--spacing-2);">
+              <strong>Calibration:</strong> Precision maintained across all equipment
+            </div>
+            <div style="padding: var(--spacing-3); background: var(--neutral-100); border-radius: var(--border-radius);">
+              <strong>Downtime:</strong> Minimized through proactive maintenance
             </div>
           </div>
         </div>
@@ -156,14 +158,14 @@
         <h2 id="gallery-title" class="section-title fade-in">Equipment Gallery</h2>
         <p class="text-center fade-in mb-6">Visual showcase of our manufacturing equipment and capabilities</p>
         
-        <!-- TODO: Replace with actual machinery photos -->
         <div class="gallery fade-in">
           <div class="gallery-item">
             <img src="./assets/images/STOll.png" alt="Knitting Machine Operation" loading="lazy">
           </div>
           <div class="gallery-item">
-              <h5 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-1);">Technical Specifications:</h5>
-              <p class="text-gray"><em>Computerized flatbed machines optimized for high-volume production. Programmable stitch control with gauge range 7-12 for consistent quality output.</em></p>
+            <h5 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-1);">Technical Specifications:</h5>
+            <p class="text-gray"><em>Computerized flatbed machines optimized for high-volume production. Programmable stitch control with gauge range 7-12 for consistent quality output.</em></p>
+          </div>
           <div class="gallery-item">
             <img src="./assets/images/Clixing.png" alt="Steam Pressing Equipment" loading="lazy">
           </div>
@@ -171,8 +173,6 @@
             <img src="./assets/images/product-3.jpg" alt="Cutting Table Setup" loading="lazy">
           </div>
         </div>
-        
-        <p class="text-center mt-6 text-gray"><em></em></p>
       </div>
     </section>
 
@@ -236,5 +236,24 @@
   </a>
 
   <script src="./js/enhanced-main.js"></script>
+
+  <!-- Fix: Make videos clickable -->
+  <style>
+    video.machinery-video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      position: relative;
+      z-index: 2;
+      pointer-events: auto;
+    }
+    .card::before,
+    .card::after,
+    .slide-in-left::before,
+    .slide-in-right::after {
+      pointer-events: none !important;
+    }
+  </style>
 </body>
 </html>
